@@ -12,3 +12,37 @@ body {
   margin: 0; /* Body margin reset */
 }
 
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+p {
+  margin-bottom: 15px;
+  color: #333;
+}
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
