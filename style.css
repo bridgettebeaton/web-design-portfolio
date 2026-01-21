@@ -40,21 +40,21 @@ nav {
 h1 {
   font-size: var(--text-xl);
   line-height: 1.2;
-  color: #800000;
+  color: #3366cc;
   margin-bottom: var(--space-sm);
 }
  
 h2 {
   font-size: var(--text-lg);
   line-height: 1.3;
-  color: #800000;
+  color: #3366cc;
   margin-bottom: var(--space-sm);
 }
  
 h3, h4, h5, h6 {
   font-size: 1.5rem;
   line-height: 1.4;
-  color: #800000;
+  color: #3366cc;
   margin-bottom: var(--space-xs);
 }
  
@@ -70,7 +70,7 @@ p {
 /* ==== Links ==== */
  
 a {
-  color: #ff8080;
+  color: #ff9900;
   text-decoration: none;
 }
  
