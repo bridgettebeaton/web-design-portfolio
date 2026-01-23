@@ -117,7 +117,7 @@ body.home h1 {
 /* About Page */
 body.about h1 {
   font-size: 1.9rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 body.about h2 {
