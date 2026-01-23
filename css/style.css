@@ -1,56 +1,180 @@
-/*
-  MFJS 3501 — Lab 1.1
-  Basic styles to demonstrate separation of structure and presentation
-*/
+/* ===== Baseline Styles ===== */
+
+:root {
+  /* Type scale */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.25rem;   /* 20px */
+  --text-xl: 1.75rem;   /* 28px */
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+
+  /* Brand colors */
+  --blue: #3366cc;
+  --orange: #ff9900;
+}
+
+/* ==== Global Styles ==== */
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  font-size: var(--text-md);
   line-height: 1.6;
-  background-color: #f6f6f6;
-  color: #222;
+  margin: 0;
+  padding: 0;
+  color: #4d4d4d;
 }
 
-.container {
+/* Force font everywhere */
+h1, h2, h3, h4, h5, h6,
+p, a, li, button, input, textarea, label {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* ===== Navigation Bar ===== */
+
+nav {
+  background-color: var(--blue);
+  padding: var(--space-sm) 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-bottom: 2px solid white;
+}
+
+/* ===== Layout Wrapper ===== */
+
+.page-container {
   max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
+  margin: 0 auto;
+  padding: var(--space-lg);
 }
 
-header h1 {
-  margin-bottom: 0.25rem;
-}
-
-.subtitle {
-  margin-top: 0;
-  color: #666;
-}
+/* ===== Sections ===== */
 
 section {
-  margin-top: 2rem;
+  padding: var(--space-md) 0;
 }
+
+/* ===== Headings (GLOBAL COLOR SYSTEM) ===== */
+
+h1 {
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--blue);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--text-lg);
+  line-height: 1.3;
+  color: var(--orange);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+h3, h4, h5, h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--blue);
+  margin-bottom: var(--space-xs);
+}
+
+/* ===== PAGE-SPECIFIC HEADINGS (SIZE ONLY) ===== */
+/* Body must have class: home, about, portfolio, contact */
+
+/* Home Page */
+body.home h1 {
+  font-size: 2rem;
+}
+
+
+
+/* About Page */
+body.about h1 {
+  font-size: 1.9rem;
+  text-transform: none;
+}
+
+body.about h2 {
+  letter-spacing: 0.05em;
+}
+
+/* Portfolio Page */
+body.portfolio h1 {
+  font-size: 2.1rem;
+}
+
+/* Contact Page */
+body.contact h1 {
+  font-size: 1.9rem;
+}
+
+body.contact h2 {
+  font-weight: normal;
+}
+
+/* ===== Paragraphs ===== */
+
+p {
+  font-size: var(--text-md);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+/* ===== Links ===== */
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Lists ===== */
+
+ul,
+ol {
+  margin-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* ===== Images ===== */
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-footer {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #ddd;
-  font-size: 0.9rem;
-  color: #666;
+  margin-bottom: var(--space-md);
 }
