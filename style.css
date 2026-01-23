@@ -113,7 +113,6 @@ body.home h1 {
 }
 
 
-
 /* About Page */
 body.about h1 {
   font-size: 1.9rem;
@@ -134,9 +133,6 @@ body.contact h1 {
   font-size: 1.9rem;
 }
 
-body.contact h2 {
-  font-weight: normal;
-}
 
 /* ===== Paragraphs ===== */
 
