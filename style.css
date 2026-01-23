@@ -2,10 +2,10 @@
 
 :root {
   /* Type scale */
-  --text-sm: 0.5rem;
-  --text-md: 0.75rem;
-  --text-lg: 1rem;
-  --text-xl: 1.25rem;
+  --text-sm: 0.875rem;  /* 14px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.25rem;   /* 20px */
+  --text-xl: 1.75rem;   /* 28px */
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -16,6 +16,10 @@
 
 /* ==== Global Styles ==== */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Times New Roman", Times, serif;
   font-size: var(--text-md);
@@ -25,14 +29,19 @@ body {
   color: #4d4d4d;
 }
 
+/* Force font everywhere (helps if something overrides/inherits oddly) */
+h1, h2, h3, h4, h5, h6,
+p, a, li, button, input, textarea, label {
+  font-family: "Times New Roman", Times, serif;
+}
+
 /* ===== Navigation Bar ===== */
 
 nav {
-  background-color: #3366cc;   /* filled bar color */
+  background-color: #3366cc; /* filled bar color */
   padding: var(--space-sm) 0;
 }
 
-/* Center the menu tabs */
 nav ul {
   list-style: none;
   margin: 0;
@@ -42,27 +51,15 @@ nav ul {
   gap: var(--space-md);
 }
 
-.page-container {
-  padding-top: var(--space-md);
-}
-
-
-/* Make nav links white */
 nav a {
   color: white;
   font-weight: bold;
   text-decoration: none;
 }
 
-/* Hover effect */
 nav a:hover {
   border-bottom: 2px solid white;
 }
-
-.page-container {
-  padding-top: var(--space-md);
-}
-
 
 /* ===== Layout Wrapper ===== */
 
@@ -70,21 +67,6 @@ nav a:hover {
   max-width: 800px;
   margin: 0 auto;
   padding: var(--space-lg);
-}
-
-/* ===== Navigation ===== */
-
-nav {
-  padding: var(--space-sm) 0;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--space-lg);
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
 }
 
 /* ===== Sections ===== */
@@ -119,10 +101,12 @@ h3, h4, h5, h6 {
 }
 
 /* ===== PAGE-SPECIFIC HEADINGS ===== */
+/* Make sure your <body> has the correct class:
+   <body class="home">, <body class="about">, etc. */
 
 /* Home Page */
 body.home h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 body.home h2 {
@@ -131,7 +115,7 @@ body.home h2 {
 
 /* About Page */
 body.about h1 {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   text-transform: uppercase;
 }
 
@@ -141,7 +125,7 @@ body.about h2 {
 
 /* Portfolio Page */
 body.portfolio h1 {
-  font-size: 1.6rem;
+  font-size: 2.1rem;
 }
 
 body.portfolio h2 {
@@ -150,7 +134,7 @@ body.portfolio h2 {
 
 /* Contact Page */
 body.contact h1 {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
 }
 
 body.contact h2 {
