@@ -18,7 +18,7 @@
   --orange: #ff9900;
 }
 
-/* ==== Global Styles ==== */
+/* ==== Global Styles (Mobile-first) ==== */
 
 * {
   box-sizing: border-box;
@@ -39,8 +39,15 @@ p, a, li, button, input, textarea, label {
   font-family: "Times New Roman", Times, serif;
 }
 
-/* ===== Navigation Bar ===== */
+/* ===== Responsive Images (Required) ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: var(--space-md);
+}
 
+/* ===== Navigation Bar (Mobile-first) ===== */
 nav {
   background-color: var(--blue);
   padding: var(--space-sm) 0;
@@ -49,38 +56,43 @@ nav {
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 var(--space-sm);
+
+  /* Mobile-first: stacked links */
   display: flex;
-  justify-content: center;
-  gap: var(--space-md);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 nav a {
   color: white;
   font-weight: bold;
   text-decoration: none;
+  padding: 0.25rem 0.5rem; /* easier to tap on phones */
 }
 
 nav a:hover {
   border-bottom: 2px solid white;
 }
 
-/* ===== Layout Wrapper ===== */
-
+/* ===== Layout Wrapper (Mobile-first) ===== */
 .page-container {
+  /* flexible width */
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: var(--space-lg);
+
+  /* smaller padding on phones */
+  padding: var(--space-md) var(--space-sm);
 }
 
 /* ===== Sections ===== */
-
 section {
   padding: var(--space-md) 0;
 }
 
 /* ===== Headings (GLOBAL COLOR SYSTEM) ===== */
-
 h1 {
   font-size: var(--text-xl);
   line-height: 1.2;
@@ -112,8 +124,6 @@ body.home h1 {
   font-size: 2rem;
 }
 
-
-
 /* About Page */
 body.about h1 {
   font-size: 1.9rem;
@@ -134,12 +144,7 @@ body.contact h1 {
   font-size: 1.9rem;
 }
 
-body.contact h2 {
-  font-weight: normal;
-}
-
 /* ===== Paragraphs ===== */
-
 p {
   font-size: var(--text-md);
   line-height: 1.6;
@@ -147,7 +152,6 @@ p {
 }
 
 /* ===== Links ===== */
-
 a {
   color: var(--orange);
   text-decoration: none;
@@ -158,7 +162,6 @@ a:hover {
 }
 
 /* ===== Lists ===== */
-
 ul,
 ol {
   margin-left: var(--space-md);
@@ -170,11 +173,30 @@ li {
   margin-bottom: var(--space-xs);
 }
 
-/* ===== Images ===== */
+/* =========================================================
+   TABLET / DESKTOP ENHANCEMENTS (Required media query)
+   ========================================================= */
+@media (min-width: 768px) {
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: var(--space-md);
+  /* Nav becomes a horizontal bar */
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: 0;
+  }
+
+  /* More breathing room on larger screens */
+  .page-container {
+    padding: var(--space-lg);
+  }
+
+  /* Optional: slightly larger headings on bigger screens */
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
 }
