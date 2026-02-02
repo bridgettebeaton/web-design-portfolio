@@ -71,23 +71,35 @@ nav a {
   color: white;
   font-weight: bold;
   text-decoration: none;
-  padding: 0.25rem 0.5rem; /* easier to tap on phones */
+
+  /* bigger tap target */
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.4rem;
 }
 
-nav a:hover {
-  border-bottom: 2px solid white;
+nav a:hover,
+nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+/* ===== Skip Link (Accessibility helper) ===== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  z-index: 9999;
+  border-radius: 0.4rem;
 }
 
-/* ===== Layout Wrapper (Mobile-first) ===== */
-.page-container {
-  /* flexible width */
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-
-  /* smaller padding on phones */
-  padding: var(--space-md) var(--space-sm);
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
 }
+
 
 /* ===== Sections ===== */
 section {
@@ -164,6 +176,14 @@ footer a {
 main a:hover,
 footer a:hover {
   text-decoration-thickness: 2px;
+}
+/* ===== Keyboard Focus (Required) ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
 }
 
 
