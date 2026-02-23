@@ -40,7 +40,7 @@ body {
   width: 100%;
   max-width: 900px;              /* prevents overly wide text on large screens */
   margin: 0 auto;                /* centers the container */
-  padding: 0 var(--space-sm);    /* horizontal bumpers on mobile */
+  padding: 0 var(--space-lg);    /* horizontal bumpers on mobile */
 }
 /* Force font everywhere */
 h1, h2, h3, h4, h5, h6,
