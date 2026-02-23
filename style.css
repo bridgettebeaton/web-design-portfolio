@@ -35,12 +35,13 @@ body {
 }
 
 /* ===== Page Container (Adds Bumpers + Centers Content) ===== */
+/* ===== Centered Page Layout ===== */
 
 .page-container {
   width: 100%;
-  max-width: 900px;              /* prevents overly wide text on large screens */
-  margin: 0 auto;                /* centers the container */
-  padding: 0 var(--space-lg);    /* horizontal bumpers on mobile */
+  max-width: 900px;        /* Controls overall width */
+  margin: 0 auto;          /* Centers horizontally */
+  padding: 0 var(--space-md);
 }
 /* Force font everywhere */
 h1, h2, h3, h4, h5, h6,
