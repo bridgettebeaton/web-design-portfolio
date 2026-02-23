@@ -25,5 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  console.log("script.js loaded and button listener attached ✅");
+  console.log("script.js loaded and button listener attached ");
 });
