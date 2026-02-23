@@ -8,9 +8,10 @@
   <!-- Use ONLY ONE stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <body class="home">
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <nav>
     <ul>
@@ -26,7 +27,6 @@
     <header>
       <h1 id="home-title">Home</h1>
       <h2>Welcome to My Page</h2>
-  
     </header>
 
     <main id="main-content">
@@ -43,11 +43,13 @@
           Navigate through the above pages to learn more about me, what I like to do, and my educational experience that has led me to be a journalist.
         </p>
 
- <button id="learnMoreBtn">Learn More</button>
+        <button id="learnMoreBtn" type="button" aria-expanded="false" aria-controls="extraText">
+          Learn More
+        </button>
 
-<p id="extraText" style="display: none;">
-  This site will be updated as my work progresses, please reach out if you have any questions.
-</p>
+        <p id="extraText" hidden>
+          This site will be updated as my work progresses, please reach out if you have any questions.
+        </p>
 
       </section>
 
@@ -63,11 +65,12 @@
 
     <footer>
       <p>
-        Built by <strong>Bridgette Beaton</strong> · MFJS 3501 
+        Built by <strong>Bridgette Beaton</strong> · MFJS 3501
       </p>
     </footer>
 
   </div>
-<script src="script.js"></script>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
