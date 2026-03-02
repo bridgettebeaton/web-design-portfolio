@@ -255,10 +255,10 @@ li {
 }
 
 .footer-tabs a {
-  font-size: var(--text-sm); /* makes them tiny */
+  font-size: var(--text-sm);
   text-decoration: none;
-  color: var(--blue);
-  opacity: 0.75;
+  color: #ffffff !important;  /* forces white */
+  opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 
