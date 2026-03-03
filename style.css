@@ -266,3 +266,38 @@ li { margin-bottom: var(--space-xs); }
 .button-primary:focus-visible {
   opacity: 0.92;
 }
+/* ===== Minimal Footer Links (no bar, dotted separators) ===== */
+
+.footer-nav {
+  background: transparent !important; /* kills any blue bar */
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-lg);
+  padding: var(--space-sm) 0;
+  text-align: center;
+}
+
+/* reset list */
+.footer-tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: inline-flex; /* keeps it as a single centered line */
+  flex-wrap: wrap;      /* wraps nicely on small screens */
+  gap: 0;               /* dots handle spacing */
+}
+
+/* links */
+.footer-tabs a {
+  color: var(--brand-blue);
+  font-size: var(--text-sm);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* dot separators between items */
+.footer-tabs li + li::before {
+  content: " · ";
+  color: var(--brand-blue);
+  padding: 0 0.6rem;
+}
