@@ -186,19 +186,21 @@ li { margin-bottom: var(--space-xs); }
   h2 { font-size: 1.4rem; }
 }
 
-/* ===== Footer Navigation Tabs ===== */
+/* ===== Footer Small Navigation Links ===== */
+
 .footer-nav {
   border-top: 1px solid var(--border);
   margin-top: var(--space-lg);
   padding: var(--space-sm) 0;
   text-align: center;
-  background: var(--brand-blue);
+  background: transparent; /* no blue bar */
 }
 
 .footer-tabs {
   list-style: none;
   margin: 0;
   padding: 0;
+
   display: flex;
   justify-content: center;
   gap: var(--space-md);
@@ -207,16 +209,16 @@ li { margin-bottom: var(--space-xs); }
 
 .footer-tabs a {
   font-size: var(--text-sm);
-  text-decoration: none;
-  color: #fff;
-  opacity: 0.9;
+  color: var(--brand-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 
 .footer-tabs a:hover,
 .footer-tabs a:focus-visible {
   opacity: 1;
-  text-decoration: underline;
 }
 
 /* ===== Design System page helpers ===== */
