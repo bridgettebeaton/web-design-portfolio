@@ -27,3 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("script.js loaded and button listener attached ");
 });
+// Mobile nav toggle (safe to add even if you don't use it on every page)
+const toggle = document.querySelector(".nav-toggle");
+const links = document.querySelector(".nav-links");
+
+if (toggle && links) {
+  toggle.addEventListener("click", () => {
+    const open = links.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+}
