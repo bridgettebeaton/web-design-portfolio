@@ -476,3 +476,17 @@ li { margin-bottom: var(--space-xs); }
   color: var(--brand-blue);
   padding: 0 0.6rem;
 }
+/* ===== Safe Add-On (do not remove existing CSS) ===== */
+/* Put this at the VERY BOTTOM of style.css */
+
+/* 1) Define --orange so .btn-primary / .btn-secondary work */
+:root {
+  --orange: var(--brand-blue);
+}
+
+/* 2) Active state for your existing <nav> (not .site-nav) */
+nav a.is-active {
+  background: rgba(255, 255, 255, 0.18);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
