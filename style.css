@@ -1,3 +1,178 @@
+/* ===== Design System Additions (8pt spacing + reusable components) ===== */
+
+:root {
+  /* spacing (8pt system) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+
+  /* type */
+  --h1: clamp(1.8rem, 4vw, 2.4rem);
+  --h2: clamp(1.3rem, 3vw, 1.6rem);
+  --h3: 1.125rem;
+
+  /* surfaces */
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  /* make sure these match your current palette */
+  /* if you already have --blue / --orange, do NOT duplicate them */
+}
+
+/* layout helpers */
+.container {
+  width: min(1000px, calc(100% - (var(--s-6))));
+  margin-inline: auto;
+}
+
+.stack > * + * { margin-top: var(--s-4); }
+.stack-sm > * + * { margin-top: var(--s-2); }
+
+h1 { font-size: var(--h1); line-height: 1.1; }
+h2 { font-size: var(--h2); line-height: 1.2; }
+h3 { font-size: var(--h3); line-height: 1.25; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  min-height: 44px; /* tap target */
+}
+
+.btn:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+.btn-primary:hover { filter: brightness(0.95); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--orange);
+  border-color: var(--orange);
+}
+.btn-secondary:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* ===== Cards (image + text) ===== */
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.card__body {
+  padding: var(--s-4);
+}
+
+.card__title { margin: 0 0 var(--s-2); }
+.card__text { margin: 0 0 var(--s-4); }
+
+/* card grid (reusable) */
+.card-grid {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ===== Navigation (desktop + mobile) ===== */
+/* Only apply if your nav has: <nav class="site-nav"> <button class="nav-toggle"> ... */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s-4);
+}
+
+.site-nav a {
+  text-decoration: none;
+  padding: var(--s-2) var(--s-3);
+  border-radius: 999px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-nav a:hover { background: rgba(0,0,0,0.05); }
+.site-nav a:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+/* active state: add class="is-active" on the current page link */
+.site-nav a.is-active {
+  background: rgba(0,0,0,0.08);
+  font-weight: 700;
+}
+
+/* mobile menu */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--s-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: var(--s-4);
+    top: 64px;
+    flex-direction: column;
+    gap: var(--s-2);
+    padding: var(--s-3);
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.08);
+    min-width: 200px;
+  }
+  .nav-links.is-open { display: flex; }
+}
 /* ===== Baseline Styles ===== */
 
 :root {
