@@ -490,3 +490,8 @@ nav a.is-active {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
