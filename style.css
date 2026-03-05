@@ -495,3 +495,9 @@ main {
   margin: 0 auto;
   padding: 0 16px;
 }
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
