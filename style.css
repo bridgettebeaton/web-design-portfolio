@@ -501,3 +501,40 @@ img {
   height: auto;
   display: block;
 }
+.site-footer nav {
+  background: transparent;
+  padding: 0;
+}
+
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.site-footer li {
+  display: inline;
+}
+
+.site-footer li + li::before {
+  content: " · ";
+  color: var(--brand-blue);
+  padding: 0 0.6rem;
+}
+
+.site-footer a {
+  color: var(--brand-blue);
+  text-decoration: underline;
+  background: transparent;
+  padding: 0;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible,
+.site-footer a.is-active {
+  background: transparent;
+}
