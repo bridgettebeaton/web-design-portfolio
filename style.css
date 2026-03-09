@@ -17,6 +17,579 @@
 
   /* surfaces */
   --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  /* baseline type scale */
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.25rem;   /* 20px */
+  --text-xl: 1.75rem;   /* 28px */
+
+  /* baseline spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+
+  /* brand */
+  --brand-blue: #0E4C67;
+  --orange: var(--brand-blue);
+  --text-color: #2f2f2f;
+  --bg: #ffffff;
+  --border: #e5e5e5;
+}
+
+/* ===== Global Styles ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background: var(--bg);
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container {
+  width: min(1000px, calc(100% - var(--s-6)));
+  margin-inline: auto;
+}
+
+.stack > * + * {
+  margin-top: var(--s-4);
+}
+
+.stack-sm > * + * {
+  margin-top: var(--s-2);
+}
+
+/* ===== Typography ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+button,
+input,
+textarea,
+label {
+  font-family: inherit;
+}
+
+h1 {
+  font-size: var(--h1);
+  line-height: 1.1;
+  color: var(--brand-blue);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--h2);
+  line-height: 1.2;
+  color: var(--brand-blue);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+h3 {
+  font-size: var(--h3);
+  line-height: 1.25;
+  color: var(--brand-blue);
+  margin-bottom: var(--space-xs);
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--brand-blue);
+  margin-bottom: var(--space-xs);
+}
+
+body.home h1 {
+  font-size: 2rem;
+}
+
+body.about h1 {
+  font-size: 1.9rem;
+}
+
+body.portfolio h1 {
+  font-size: 2.1rem;
+}
+
+body.contact h1 {
+  font-size: 1.9rem;
+}
+
+p {
+  font-size: var(--text-md);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.caption {
+  font-size: var(--text-xs);
+}
+
+.small-text {
+  font-size: var(--text-sm);
+}
+
+/* ===== Links ===== */
+
+main a,
+footer a {
+  color: var(--brand-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+main a:hover,
+footer a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ===== Focus Styles ===== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* ===== Images ===== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Lists ===== */
+
+ul,
+ol {
+  margin-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* ===== Sections ===== */
+
+section {
+  padding: var(--space-md) 0;
+}
+
+/* ===== Skip Link ===== */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  z-index: 9999;
+  border-radius: 0.4rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ===== Buttons ===== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+  min-height: 44px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.button-primary {
+  display: inline-block;
+  background: var(--brand-blue);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  opacity: 0.92;
+}
+
+/* ===== Cards ===== */
+
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.card__body {
+  padding: var(--s-4);
+}
+
+.card__title {
+  margin: 0 0 var(--s-2);
+}
+
+.card__text {
+  margin: 0 0 var(--s-4);
+}
+
+.card-grid {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 1fr;
+}
+
+/* ===== Header Navigation Only ===== */
+
+header nav,
+.site-header nav,
+.main-nav {
+  background-color: var(--brand-blue);
+  padding: var(--space-sm) 0;
+}
+
+header nav ul,
+.site-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+header nav a,
+.site-header nav a,
+.main-nav a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.4rem;
+}
+
+header nav a:hover,
+header nav a:focus-visible,
+.site-header nav a:hover,
+.site-header nav a:focus-visible,
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+header nav a.is-active,
+header nav a[aria-current="page"],
+.site-header nav a.is-active,
+.site-header nav a[aria-current="page"],
+.main-nav a.is-active,
+.main-nav a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.18);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ===== Optional Site Nav Pattern ===== */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s-4);
+}
+
+.site-nav a {
+  text-decoration: none;
+  padding: var(--s-2) var(--s-3);
+  border-radius: 999px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-nav a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.site-nav a.is-active {
+  background: rgba(0, 0, 0, 0.08);
+  font-weight: 700;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--s-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Footer Navigation ===== */
+
+footer nav,
+.footer-nav {
+  background: transparent !important;
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-lg);
+  padding: var(--space-sm) 0;
+  text-align: center;
+}
+
+footer nav ul,
+.footer-tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+footer nav li,
+.footer-tabs li {
+  margin: 0;
+}
+
+footer nav a,
+.footer-tabs a {
+  background: transparent !important;
+  color: var(--brand-blue) !important;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  padding: 0;
+  border-radius: 0;
+}
+
+footer nav a:hover,
+footer nav a:focus-visible,
+.footer-tabs a:hover,
+.footer-tabs a:focus-visible {
+  background: transparent !important;
+  opacity: 1;
+}
+
+footer nav li + li::before,
+.footer-tabs li + li::before {
+  content: " · ";
+  color: var(--brand-blue);
+  padding: 0 0.6rem;
+}
+
+/* ===== Design System Helpers ===== */
+
+.swatches {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+.swatch {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.chip {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.chip-primary {
+  background: var(--brand-blue);
+}
+
+.chip-text {
+  background: var(--text-color);
+}
+
+.chip-bg {
+  background: var(--bg);
+}
+
+.chip-border {
+  background: var(--border);
+}
+
+/* ===== Responsive ===== */
+
+@media (min-width: 720px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: var(--s-4);
+    top: 64px;
+    flex-direction: column;
+    gap: var(--s-2);
+    padding: var(--s-3);
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    min-width: 200px;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  header nav ul,
+  .site-header nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: 0;
+  }
+
+  .page-container {
+    padding: var(--space-lg);
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .swatches {
+    grid-template-columns: 1fr 1fr;
+  }
+}/* ===== Design System Additions (8pt spacing + reusable components) ===== */
+
+:root {
+  /* spacing (8pt system) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+
+  /* type */
+  --h1: clamp(1.8rem, 4vw, 2.4rem);
+  --h2: clamp(1.3rem, 3vw, 1.6rem);
+  --h3: 1.125rem;
+
+  /* surfaces */
+  --radius: 14px;
   --shadow: 0 10px 30px rgba(0,0,0,0.08);
 
   /* make sure these match your current palette */
