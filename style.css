@@ -1131,3 +1131,22 @@ img {
   margin-top: auto;
 }
 
+/* ===== Orange side accents ===== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: #f28c28; /* orange */
+  z-index: -1;
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
