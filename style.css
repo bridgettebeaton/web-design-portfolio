@@ -1131,15 +1131,19 @@ img {
   margin-top: auto;
 }
 
-/* ===== Orange side accents ===== */
+/* ===== Soft orange side accents ===== */
 body::before,
 body::after {
   content: "";
   position: fixed;
   top: 0;
-  width: 8px;
+  width: 10px;
   height: 100%;
-  background: #f28c28; /* orange */
+  background: linear-gradient(
+    to bottom,
+    rgba(242, 140, 40, 0.85),
+    rgba(242, 140, 40, 0.45)
+  );
   z-index: -1;
 }
 
