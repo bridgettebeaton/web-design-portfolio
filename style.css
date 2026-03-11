@@ -1111,3 +1111,23 @@ img {
 .site-footer a.is-active {
   background: transparent;
 }
+.card-grid {
+  display: grid;
+  gap: 24px;
+  align-items: stretch;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card__body .btn {
+  margin-top: auto;
+}
+
